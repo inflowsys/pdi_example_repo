@@ -424,16 +424,16 @@
     </partitionschemas>
     <slaveservers>
       <slaveserver>
-        <name>srv2</name>
-        <hostname>10.0.0.100</hostname>
-        <port>8082</port>
+        <name>main</name>
+        <hostname>localhost</hostname>
+        <port>8089</port>
         <webAppName/>
         <username>cluster</username>
         <password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password>
         <proxy_hostname/>
         <proxy_port/>
         <non_proxy_hosts/>
-        <master>N</master>
+        <master>Y</master>
         <sslMode>N</sslMode>
       </slaveserver>
       <slaveserver>
@@ -450,16 +450,16 @@
         <sslMode>N</sslMode>
       </slaveserver>
       <slaveserver>
-        <name>main</name>
-        <hostname>localhost</hostname>
-        <port>8089</port>
+        <name>srv2</name>
+        <hostname>10.0.0.100</hostname>
+        <port>8082</port>
         <webAppName/>
         <username>cluster</username>
         <password>Encrypted 2be98afc86aa7f2e4cb1aa265cd86aac8</password>
         <proxy_hostname/>
         <proxy_port/>
         <non_proxy_hosts/>
-        <master>Y</master>
+        <master>N</master>
         <sslMode>N</sslMode>
       </slaveserver>
     </slaveservers>
@@ -716,7 +716,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>get max date</from>
+      <from>get max dates</from>
       <to>Table input</to>
       <enabled>Y</enabled>
     </hop>
@@ -1735,7 +1735,7 @@ FROM film
 where last_update > ?
 </sql>
     <limit>0</limit>
-    <lookup>get max date</lookup>
+    <lookup>get max dates</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>Y</lazy_conversion_active>
@@ -1753,7 +1753,7 @@ where last_update > ?
     </GUI>
   </step>
   <step>
-    <name>get max date</name>
+    <name>get max dates</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
